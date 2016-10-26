@@ -24,7 +24,7 @@ APPLICATION_NAME = "Restaurant Menu Application"
 
 
 # Connect to Database and create database session
-engine = create_engine('postgresql+psycopg2://catalog:catalog@/menus')
+engine = create_engine('postgresql://catalog:catalog@/menus')
 Base.metadata.bind = engine
 
 DBSession = sessionmaker(bind=engine)
