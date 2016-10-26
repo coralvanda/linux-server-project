@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect
 from flask import jsonify, url_for, flash
 from flask import session as login_session
 from flask import make_response
-from flask.ext.seasurf import SeaSurf
+from flask_seasurf import SeaSurf
 from sqlalchemy import create_engine, asc
 from sqlalchemy.orm import sessionmaker
 from database_setup import Base, Restaurant, MenuItem, User
