@@ -19,7 +19,7 @@ app = Flask(__name__)
 csrf = SeaSurf(app)
 
 CLIENT_ID = json.loads(
-    open('client_secrets.json', 'r').read())['web']['client_id']
+    open('/var/www/restaurants/restaurants/client_secrets.json', 'r').read())['web']['client_id']
 APPLICATION_NAME = "Restaurant Menu Application"
 
 
