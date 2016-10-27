@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect
 from flask import jsonify, url_for, flash
 from flask import session as login_session
 from flask import make_response
-from flask_seasurf import SeaSurf
+from flask.ext.seasurf import SeaSurf
 from sqlalchemy import create_engine, asc
 from sqlalchemy.orm import sessionmaker
 from database_setup import Base, Restaurant, MenuItem, User
@@ -140,7 +140,7 @@ def gconnect():
 
     try:
         # Upgrade the authorization code into a credentials object
-        oauth_flow = flow_from_clientsecrets('client_secrets.json', scope='')
+        oauth_flow = flow_from_clientsecrets('/var/www/restaurants/restaurants/client_secrets.json', scope='')
         oauth_flow.redirect_uri = 'postmessage'
         credentials = oauth_flow.step2_exchange(code)
     except FlowExchangeError:
