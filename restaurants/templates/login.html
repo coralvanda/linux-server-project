@@ -13,12 +13,12 @@
 </head>
 
 
-<body>  
+<body>
 
   <div class = 'flash'>
             {% with messages = get_flashed_messages() %}
         {% if messages %}
-            
+
           <ul>
           {% for message in messages %}
               <li> <strong> {{ message }} </strong> </li>
@@ -31,7 +31,7 @@
 
 <!-- GOOGLE PLUS SIGN IN-->
 
-          
+
           <div id="signInButton">
           <span class="g-signin"
             data-scope="openid email"
@@ -65,14 +65,14 @@ function signInCallback(authResult) {
           setTimeout(function() {
           window.location.href = "/restaurant";
         }, 4000);
-          
+
         } else if (authResult['error']) {
           console.log('There was an error: ' + authResult['error']);
         } else {
           $('#result').html('Failed to make a server-side call. Check your configuration and console.');
          }
       }
-      
+
   }); } }
 </script>
 
@@ -83,9 +83,10 @@ function signInCallback(authResult) {
 <!--FACEBOOK SIGN IN -->
 <script>
   window.fbAsyncInit = function() {
+  console.log("Begin fbAsyncInit func");
   FB.init({
     appId      : '880928375366465',
-    cookie     : true,  // enable cookies to allow the server to access 
+    cookie     : true,  // enable cookies to allow the server to access
                         // the session
     xfbml      : true,  // parse social plugins on this page
     version    : 'v2.2' // use version 2.2
@@ -93,6 +94,7 @@ function signInCallback(authResult) {
   };
   // Load the SDK asynchronously
   (function(d, s, id) {
+    console.log("Loading SDK asynchronously");
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
     js = d.createElement(s); js.id = id;
@@ -102,6 +104,7 @@ function signInCallback(authResult) {
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
   function sendTokenToServer() {
+    console.log("Begin sendTokenToServer func");
     var access_token = FB.getAuthResponse()['accessToken'];
     console.log(access_token)
     console.log('Welcome!  Fetching your information.... ');
@@ -120,12 +123,12 @@ function signInCallback(authResult) {
          setTimeout(function() {
           window.location.href = "/restaurant";
          }, 4000);
-          
+
       } else {
         $('#result').html('Failed to make a server-side call. Check your configuration and console.');
          }
       }
-      
+
   });
     });
   }
@@ -133,7 +136,7 @@ function signInCallback(authResult) {
 
 
 <button>
-         
+
 
           <fb:login-button scope="public_profile,email" onlogin="sendTokenToServer();">
 <a href='javascript:sendTokenToServer()'>Login with Facebook</a>
