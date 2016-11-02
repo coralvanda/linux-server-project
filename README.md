@@ -4,4 +4,28 @@ Nanodegree.  It uses custom-configured Linux server hosted on Amazon Web
 Services (AWS) to run a website.
 
 ## Set-up Instructions:
-More info to come...
+To view the front-end of the website, simply direct a browser to
+http://ec2-35-160-17-177.us-west-2.compute.amazonaws.com/.
+
+To access the server, SSH using port 2200 to the following IP address:
+35.160.17.177.  An rsa key file is required, and will be provided as part
+of the project submission, along with the name of the user to connect as.
+
+### Software installed:
+ - libapache2-mod-wsgi
+ - libapache2-mod-wsgi python-dev
+ - postgresql
+ - postgresql postgresql-contrib
+ - git
+ - sqlalchemy
+ - python-pip
+ - psycopg2
+ - python psycopg2
+ - libpd-dev
+ - virtualenv
+ - Flask
+ - ntp
+ - httplib2
+ - requests
+ - flask-seasurf
+ - oauth2client
