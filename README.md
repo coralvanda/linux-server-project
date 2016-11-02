@@ -29,3 +29,18 @@ of the project submission, along with the name of the user to connect as.
  - requests
  - flask-seasurf
  - oauth2client
+
+### Configurations
+ - users added according to project specifications
+ - sudo permission assigned as required
+ - remote login of root disabled
+ - SSH set to require rsa key for user connection
+ - SSH port set to 2200
+ - UFW refuses all connections except SSH, HTTP, and NTP
+ - local timezone set to UTC
+ - PostgreSQL user 'catalog' added with permission to the project database
+ - ownership and group of project files/folders assigned to server user
+ 'catalog'
+ - apache2 server configured to host custom wsgi app
+ - virtual environment set up to install Python modules necessary for the
+ project without altering server Python modules
