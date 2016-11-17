@@ -1,7 +1,8 @@
 # What is it?
 This is a project created for the Udacity Full-stack Web Developer
-Nanodegree.  It uses custom-configured Linux server hosted on Amazon Web
-Services (AWS) to run a website.
+Nanodegree.  Originally, it used a custom-configured Linux server hosted
+on Amazon Web Services (AWS) to run a website.  It has now been rehosted
+using a server on Digital Ocean.
 
 ## Set-up Instructions:
 To view the front-end of the website, simply direct a browser to
