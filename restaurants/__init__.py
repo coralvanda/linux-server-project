@@ -19,7 +19,7 @@ app = Flask(__name__)
 csrf = SeaSurf(app)
 
 CLIENT_ID = json.loads(
-    open('/var/www/restaurants/restaurants/client_secrets.json', 'r').read())['web']['client_id']
+    open('/var/www/linux-server-project/restaurants/client_secrets.json', 'r').read())['web']['client_id']
 APPLICATION_NAME = "Restaurant Menu Application"
 
 
@@ -52,9 +52,9 @@ def fbconnect():
     print "access token received %s " % access_token
 
     app_id = json.loads(
-        open('/var/www/restaurants/restaurants/fb_client_secrets.json', 'r').read())['web']['app_id']
+        open('/var/www/linux-server-project/restaurants/fb_client_secrets.json', 'r').read())['web']['app_id']
     app_secret = json.loads(
-        open('/var/www/restaurants/restaurants/fb_client_secrets.json', 'r').read())['web']['app_secret']
+        open('/var/www/linux-server-project/restaurants/fb_client_secrets.json', 'r').read())['web']['app_secret']
     url = 'https://graph.facebook.com/oauth/access_token?grant_type='
     url += 'fb_exchange_token&client_id='
     url += '%s&client_secret=%s&fb_exchange_token=%s' % (app_id, app_secret,
@@ -140,7 +140,7 @@ def gconnect():
 
     try:
         # Upgrade the authorization code into a credentials object
-        oauth_flow = flow_from_clientsecrets('/var/www/restaurants/restaurants/client_secrets.json', scope='')
+        oauth_flow = flow_from_clientsecrets('/var/www/linux-server-project/restaurants/client_secrets.json', scope='')
         oauth_flow.redirect_uri = 'postmessage'
         credentials = oauth_flow.step2_exchange(code)
     except FlowExchangeError:
