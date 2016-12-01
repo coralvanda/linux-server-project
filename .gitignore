@@ -1,3 +1,7 @@
 /restaurants/venv/
 
 cover-image.jpg
+
+/restaurants/client_secrets.json
+
+/restaurants/fb_client_secrets.json
